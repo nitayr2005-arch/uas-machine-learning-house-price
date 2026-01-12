@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediksi Harga Rumah</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            width: 350px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        h2 { text-align: center; margin-bottom: 25px; color: #333; }
+        label { font-weight: 600; color: #555; }
+        input {
+            width: 100%; padding: 10px; margin-top: 6px; margin-bottom: 15px;
+            border-radius: 8px; border: 1px solid #ccc; font-size: 14px;
+        }
+        input:focus { outline: none; border-color: #667eea; }
+        button {
+            width: 100%; padding: 12px; background: #667eea; border: none;
+            border-radius: 8px; color: white; font-size: 16px; font-weight: bold;
+            cursor: pointer; transition: background 0.3s;
+        }
+        button:hover { background: #5a67d8; }
+        #result { margin-top: 20px; text-align: center; font-size: 18px;
+                  font-weight: bold; color: #2d3748; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Prediksi Harga Rumah</h2>
+
+    <label>Bedrooms</label>
+    <input type="number" id="bedrooms" min="0">
+
+    <label>Bathrooms</label>
+    <input type="number" step="0.5" id="bathrooms" min="0">
+
+    <label>Sqft Living</label>
+    <input type="number" id="sqft" min="0">
+
+    <label>Floors</label>
+    <input type="number" id="floors" min="0">
+
+    <button onclick="predict()">Prediksi</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+async function predict() {
+    // Ambil value input
+    const bedrooms = parseInt(document.getElementById("bedrooms").value);
+    const bathrooms = parseFloat(document.getElementById("bathrooms").value);
+    const sqft_living = parseInt(document.getElementById("sqft").value);
+    const floors = parseInt(document.getElementById("floors").value);
+
+    // Validasi input kosong
+    if (isNaN(bedrooms) || isNaN(bathrooms) || isNaN(sqft_living) || isNaN(floors)) {
+        document.getElementById("result").innerText = "Isi semua field terlebih dahulu!";
+        return;
+    }
+
+    try {
+        const response = await fetch("/predict", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                bedrooms, bathrooms, sqft_living, floors
+            })
+        });
+
+        const data = await response.json();
+
+        if (data.predicted_price === undefined || data.predicted_price === null) {
+            document.getElementById("result").innerText = 
+                "Terjadi kesalahan: " + (data.error || "Prediksi gagal");
+        } else {
+            document.getElementById("result").innerText =
+                "Prediksi Harga Rumah: $" + data.predicted_price.toLocaleString();
+        }
+
+    } catch (err) {
+        document.getElementById("result").innerText = "Terjadi kesalahan jaringan!";
+        console.error(err);
+    }
+}
+</script>
+
+</body>
+</html>
