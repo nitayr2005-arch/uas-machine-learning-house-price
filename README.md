@@ -32,6 +32,21 @@ Regresi Linier digunakan karena algoritma ini cocok untuk memprediksi nilai nume
 Algoritma ini bekerja dengan mempelajari hubungan linear antara variabel input (fitur rumah) dan variabel target (harga rumah).
 Selain itu, Regresi Linier memiliki keunggulan dalam hal kemudahan implementasi, interpretasi hasil, serta efisiensi komputasi, sehingga sesuai untuk tujuan pembelajaran pada mata kuliah Machine Learning.
 
+## Variabel Independen dan Dependen
+Dalam proyek ini, data dibagi menjadi dua jenis variabel, yaitu:
+
+- **Variabel Independen (X)**  
+  Variabel input yang digunakan untuk memprediksi harga rumah, terdiri dari:
+  - bedrooms
+  - bathrooms
+  - sqft_living (Square Feet)
+  - floors
+
+- **Variabel Dependen (Y)**  
+  Variabel target yang diprediksi oleh model, yaitu:
+  - price (harga rumah)
+
+
 ## Metode dan Teknologi
 Proyek ini menggunakan teknologi dan metode sebagai berikut:
 - Metode Machine Learning: Regresi
