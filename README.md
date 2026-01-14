@@ -72,7 +72,7 @@ uas-machine-learning-house-price/
 
 ## Cara menjalankan Program Windows
 1️. Membuat Virtual Environment
-  -python -m venv .venv
+  - python -m venv .venv
 2. Mengaktifkan Virtual Environment
   - .venv\Scripts\activate
 3. Menginstal Library
