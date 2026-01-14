@@ -23,6 +23,8 @@ Tujuan dari pengembangan proyek ini adalah:
 Dataset yang digunakan dalam proyek ini merupakan dataset harga rumah yang disimpan dalam format **CSV** dan **Excel**, yaitu:
 - `kc_house_data.csv`
 - `kc_house_data.xlsx`
+Dataset ini berasal dari House Sales in King County, USA yang tersedia secara publik di Kaggle.
+Dataset ini mencakup data penjualan rumah di King County, Washington (USA) antara Mei 2014 hingga Mei 2015, dengan lebih dari 21.000 observasi dan berbagai fitur rumah yang relevan untuk prediksi harga. 🔗 https://www.kaggle.com/datasets/harlfoxem/housesalesprediction
 
 Dataset ini berisi berbagai atribut rumah seperti luas bangunan, jumlah kamar, kondisi rumah, dan fitur lainnya yang digunakan sebagai variabel input dalam proses pelatihan model.
 
