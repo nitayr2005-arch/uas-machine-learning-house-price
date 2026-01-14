@@ -26,6 +26,12 @@ Dataset yang digunakan dalam proyek ini merupakan dataset harga rumah yang disim
 - `kc_house_data.csv`
 - `kc_house_data.xlsx`
 
+## Algoritma Yang Digunakan
+Algoritma Machine Learning yang digunakan dalam proyek ini adalah **Regresi Linier (Linear Regression)**.
+Regresi Linier digunakan karena algoritma ini cocok untuk memprediksi nilai numerik kontinu, seperti harga rumah.  
+Algoritma ini bekerja dengan mempelajari hubungan linear antara variabel input (fitur rumah) dan variabel target (harga rumah).
+Selain itu, Regresi Linier memiliki keunggulan dalam hal kemudahan implementasi, interpretasi hasil, serta efisiensi komputasi, sehingga sesuai untuk tujuan pembelajaran pada mata kuliah Machine Learning.
+
 ## Metode dan Teknologi
 Proyek ini menggunakan teknologi dan metode sebagai berikut:
 - Metode Machine Learning: Regresi
