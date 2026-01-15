@@ -81,6 +81,9 @@ uas-machine-learning-house-price/
   - python train.py
 5. Menjalankan Aplikasi FastAPI
   - uvicorn main:app --reload
+6. Membuka Aplikasi FastAPI
+  - http://127.0.0.1:8000
+
 
 ## Implementasi Sistem
 Model Machine Learning yang telah dilatih disimpan dalam format .pkl dan digunakan kembali oleh aplikasi FastAPI.
